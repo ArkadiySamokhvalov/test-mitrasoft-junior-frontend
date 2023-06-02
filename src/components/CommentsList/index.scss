@@ -1,0 +1,10 @@
+.comment {
+  // .comment__author
+  &__author {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+}

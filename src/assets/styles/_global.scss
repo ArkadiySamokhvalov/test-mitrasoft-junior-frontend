@@ -1,0 +1,14 @@
+body {
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: $tr-d;
+
+  // .header__logo:hover
+  &:hover {
+    color: var(--bs-primary) !important;
+  }
+}

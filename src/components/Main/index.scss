@@ -1,0 +1,55 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.main {
+  position: relative;
+
+  // .main__btn
+  &__btn {
+    z-index: 1010;
+
+    // .main__btn_back
+    &_back {
+      position: absolute;
+      top: 1rem;
+      left: calc(1.5rem * 0.5 + 1rem);
+
+      @media (min-width: breakpoints(md)) {
+        position: absolute;
+        top: 0;
+        left: calc(1.5rem * 0.5);
+      }
+    }
+
+    // .main__btn_scroll
+    &_scroll {
+      background-color: rgb(var(--bs-dark-rgb) 100%) !important;
+
+      &:hover {
+        background-color: rgb(var(--bs-dark-rgb) 100%) !important;
+      }
+    }
+  }
+
+  // .main__scroll
+  &__scroll {
+    position: fixed;
+    bottom: calc(4rem - var(--bs-card-border-width));
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: breakpoints(sm)) {
+      bottom: 0;
+    }
+
+    .main__btn_scroll {
+      float: right;
+      margin-bottom: 1.5rem;
+
+      @media (min-width: breakpoints(md)) {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

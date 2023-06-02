@@ -1,0 +1,21 @@
+@import '@/assets/styles/variables';
+
+.btn-icon {
+  width: clamp($min-control-size, 5vw, 55px);
+  height: clamp($min-control-size, 5vw, 55px);
+  padding: 0 !important;
+  transition: $tr-d !important;
+
+  // btn-icon:hover
+  &:hover {
+    color: var(--bs-primary) !important;
+    background-color: transparent !important;
+    border-color: var(--bs-primary) !important;
+  }
+
+  // .btn-icon__icon
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+}

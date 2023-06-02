@@ -1,0 +1,10 @@
+@import '@/assets/styles/variables';
+
+.search-block {
+  height: $min-control-size;
+
+  .btn {
+    width: $min-control-size;
+    height: $min-control-size;
+  }
+}

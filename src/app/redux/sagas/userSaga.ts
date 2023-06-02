@@ -4,10 +4,7 @@ import { getUserById } from '@/app/apis/userAPI';
 import { getCurrentUserId } from '@/app/selectors';
 import { TUser } from '@/app/types/app.typings';
 
-import {
-  getUserFailure,
-  getUserSuccess,
-} from '../slices/userSlice';
+import { getUserFailure, getUserSuccess } from '../slices/userSlice';
 
 function* workGetUserFetch() {
   try {

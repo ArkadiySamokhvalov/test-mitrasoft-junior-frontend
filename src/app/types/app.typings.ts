@@ -56,4 +56,4 @@ export type TCommentsState = {
 export type TUserState = {
   currentUserId: number | null;
   user: TUser | Record<string, never>;
-} & TStatus;;
+} & TStatus;

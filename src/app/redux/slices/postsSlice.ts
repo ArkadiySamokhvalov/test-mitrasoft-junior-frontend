@@ -31,5 +31,6 @@ const postsSlice = createSlice({
   },
 });
 
-export const { getPostsFetch, getUserPostsFetch, getPostsSuccess, getPostsFailure } = postsSlice.actions;
+export const { getPostsFetch, getUserPostsFetch, getPostsSuccess, getPostsFailure } =
+  postsSlice.actions;
 export default postsSlice.reducer;

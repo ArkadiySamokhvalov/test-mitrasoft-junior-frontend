@@ -1,0 +1,9 @@
+@use 'sass:map';
+
+@function breakpoints($key) {
+  @if not map-has-key($grid-breakpoints, $key) {
+    @warn "Breakpoint `#{$key}` not found.";
+  }
+
+  @return map-get($grid-breakpoints, $key);
+}

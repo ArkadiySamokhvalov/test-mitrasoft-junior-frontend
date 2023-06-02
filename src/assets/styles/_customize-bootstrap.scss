@@ -1,1 +1,19 @@
+//offcanvas
+$offcanvas-padding-y: 1rem;
+$offcanvas-padding-x: 1rem;
+$offcanvas-bg-color: #212529;
+$offcanvas-color: #f8f9fa;
+
+//accordion
+$accordion-padding-y: 1rem;
+$accordion-padding-x: 1rem;
+$accordion-color: #f8f9fa;
+$accordion-bg: transparent;
+$accordion-button-active-color: #f8f9fa;
+$accordion-button-active-bg: transparent;
+
+//list-group
+$list-group-color: #f8f9fa;
+$list-group-bg: transparent;
+
 @import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,17 @@
+@import '@/assets/styles/variables';
+
+.avatar {
+  display: block;
+  border: 1px solid var(--bs-primary);
+  transition: $tr-d;
+
+  &:not(.avatar_no-hover) {
+    cursor: pointer;
+
+    // .avatar:hover
+    &:hover {
+      box-shadow: 0 0 3px 1px var(--bs-primary);
+      opacity: 0.9;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.post {
+  // .post__avatar
+  &__avatar {
+    width: clamp(60px, 20vw, 100px);
+    height: clamp(60px, 20vw, 100px);
+  }
+}

@@ -1,0 +1,8 @@
+.profile {
+  // .profile__avatar
+  &__avatar {
+    width: clamp(110px, 40vw, 130px);
+    height: clamp(110px, 40vw, 130px);
+    margin: 0 auto;
+  }
+}
