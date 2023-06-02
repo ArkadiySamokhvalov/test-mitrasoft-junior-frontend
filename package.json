@@ -1,0 +1,96 @@
+{
+  "name": "test-mitrasoft-junior-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Arkadiy Samokhvalov",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ArkadiySamokhvalov/test-mitrasoft-junior-frontend"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "slint": "stylelint 'src/**/*.scss' --fix",
+    "format": "prettier --write 'src/'"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  },
+  "lint-staged": {
+    "*.{css, ts, tsx, js}": [
+      "prettier --write ."
+    ],
+    "*.{ts, tsx}": "eslint --fix",
+    "*.css": "stylelint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
+    }
+  },
+  "engines": {
+    "node": ">=15"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {
+    "@popperjs/core": "2.11.6",
+    "bootstrap": "5.2.3",
+    "react": "18.2.0",
+    "react-bootstrap": "2.7.4",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.6.3",
+    "@pmmmwh/react-refresh-webpack-plugin": "pmmmwh/react-refresh-webpack-plugin",
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@typescript-eslint/eslint-plugin": "5.59.7",
+    "@typescript-eslint/parser": "5.59.7",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "11.0.0",
+    "cross-env": "7.0.3",
+    "css-loader": "6.7.4",
+    "css-minimizer-webpack-plugin": "5.0.0",
+    "cz-customizable": "7.0.0",
+    "eslint": "8.41.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "html-webpack-plugin": "5.5.1",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.2",
+    "mini-css-extract-plugin": "2.7.6",
+    "postcss": "8.4.19",
+    "postcss-loader": "7.3.0",
+    "postcss-preset-env": "8.4.1",
+    "prettier": "2.8.8",
+    "react-refresh": "0.14.0",
+    "sass": "1.62.1",
+    "sass-loader": "13.3.0",
+    "style-loader": "3.3.3",
+    "stylelint": "14.16.1",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-rational-order-fix": "0.1.9",
+    "stylelint-config-recommended-scss": "8.0.0",
+    "stylelint-config-standard": "29.0.0",
+    "stylelint-order": "6.0.3",
+    "stylelint-scss": "5.0.0",
+    "ts-loader": "9.4.2",
+    "tsconfig-paths-webpack-plugin": "4.0.1",
+    "typescript": "5.0.4",
+    "webpack": "5.83.1",
+    "webpack-cli": "5.1.1",
+    "webpack-dev-server": "4.15.0",
+    "webpack-merge": "5.9.0"
+  }
+}
