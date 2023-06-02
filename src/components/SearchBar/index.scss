@@ -1,0 +1,8 @@
+@import '@/assets/styles/variables';
+
+.search {
+  // .search__icon
+  &__icon {
+    width: $min-control-size;
+  }
+}
