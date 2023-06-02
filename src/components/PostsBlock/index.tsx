@@ -10,6 +10,9 @@ import { Pagination } from '../Pagination';
 import { createPaginationData } from '../Pagination/functions';
 import { Post } from '../Post';
 import { SearchBar } from '../SearchBar';
+import { SortFilter } from '../SortFilter';
+import { filterFunc } from '../SortFilter/functions';
+import { TSortDirection } from '../SortFilter/types';
 
 import './index.scss';
 
@@ -23,6 +26,9 @@ export const PostsBlock: FC<TPostsBlockProps> = ({ postsState, postsPerPage, cla
   const { entities: posts, loading, error } = postsState;
   const [itemOffset, setItemOffset] = useState(0);
   const [currentPosts, setCurrentPosts] = useState<TPost[]>([]);
+  const [searchedPosts, setSearchedPosts] = useState<TPost[]>([]);
+  const [isSearched, setIsSearched] = useState(false);
+  const [filterToggle, setFilterToggle] =useState(false);
 
   const { currentItems, pageCount, handlePageClick } = createPaginationData<TPost>(
     currentPosts,
@@ -31,15 +37,31 @@ export const PostsBlock: FC<TPostsBlockProps> = ({ postsState, postsPerPage, cla
     setItemOffset
   );
 
-  const handleSearch = (value = '') => {
-    if (value === '') {
-      setCurrentPosts(posts);
+  const handleFilter = (dir: TSortDirection) => {
+    const curPosts = isSearched ? searchedPosts : posts;
+    setFilterToggle(true);
 
+    const { isFiltred, filtredItems } = filterFunc(dir, 'title')<TPost>(curPosts);
+
+    if (isFiltred) {
+      setCurrentPosts(filtredItems);
+    } else {
+      setCurrentPosts(curPosts);
+    }
+  };
+
+  const handleSearch = (value = '') => {
+    setFilterToggle(false);
+    if (value === '') {
+      setSearchedPosts([]);
+      setIsSearched(false);
     } else {
       const newSearchedPosts = posts.filter(
         (post) => post.title.toString().toLowerCase().indexOf(value.toLowerCase()) > -1
       );
 
+      setSearchedPosts(newSearchedPosts);
+      setIsSearched(true);
       setCurrentPosts(newSearchedPosts);
     }
   };
@@ -62,6 +84,11 @@ export const PostsBlock: FC<TPostsBlockProps> = ({ postsState, postsPerPage, cla
           <Col xl='8' md='10'>
             <div className='d-flex search-block'>
               <SearchBar className='flex-grow-1 me-2 me-md-3' onChange={handleSearch} />
+              <SortFilter
+                toggle={filterToggle}
+                onClick={handleFilter}
+                icons={['sort-alpha-down', 'sort-alpha-up']}
+              />
             </div>
           </Col>
 
