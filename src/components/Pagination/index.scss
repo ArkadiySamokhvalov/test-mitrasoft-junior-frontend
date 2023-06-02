@@ -1,0 +1,35 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.pagination {
+  z-index: 1000;
+  gap: 3px;
+
+  @media (min-width: breakpoints(sm)) {
+    gap: 0.5rem;
+  }
+
+  // .pagination__link
+  &__link {
+    width: clamp(38px, 5vw, 55px) !important;
+    height: clamp(38px, 5vw, 55px) !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+
+    @media (min-width: breakpoints(sm)) {
+      width: clamp($min-control-size, 5vw, 55px) !important;
+      height: clamp($min-control-size, 5vw, 55px) !important;
+    }
+
+    .icon {
+      height: 100%;
+    }
+
+    // .pagination__link_next
+    &_next {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

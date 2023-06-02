@@ -19,7 +19,7 @@ export const MainPage = () => {
     <Main>
       <section>
         <Container fluid='lg'>
-          <PostsBlock postsState={postsState} />
+          <PostsBlock postsState={postsState} postsPerPage={10}/>
         </Container>
       </section>
     </Main>

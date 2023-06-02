@@ -84,7 +84,7 @@ export const ProfilePage: FC = () => {
           </Row>
 
           <PostContext.Provider value={{ showAvatar: false }}>
-            <PostsBlock postsState={postsState} />
+            <PostsBlock postsState={postsState} postsPerPage={5}/>
           </PostContext.Provider>
         </Container>
       </section>
